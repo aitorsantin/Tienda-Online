@@ -1,0 +1,99 @@
+div.container-login100
+{
+	background-color: #fff ;
+}
+.wrap-login100
+{
+	
+    background-color: #C4BEC0;
+}
+span.login100-form-title
+{
+	color: #8E0C32;
+}
+input.input100
+{
+	color: #000;
+}
+input.btn
+{
+	background-color: #8E0C32;
+	color: #000;
+	border-color: #8E0C32;
+}
+
+input.btn-negro
+{
+	background-color:#000;
+	border-color: #000;
+	color: #fff;
+}
+
+input.btn-secondary:active, .btn-primary:focus, .btn-primary:hover
+{
+	background-color:#000;
+	border-color: #000;
+}
+span.txt1
+{
+	color: #000;
+}
+a.txt2
+{
+	color:#8E0C32;
+}
+div h1
+{
+	text-align: center;
+	padding-bottom: 3%;
+}
+
+form
+{
+	margin-top: 2%;	
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: #C4BEC0;
+}
+
+img.fotoProducto{
+	width: 300px;
+	height: 400px;
+	border-style: solid;
+	border-color: #CAC6C5;
+	
+}
+
+p.precio{
+	font-size: 25px;
+}
+
+div.cuadro-descripcion
+{
+	margin-top: 5%;
+	margin-right: 2%;
+	border-style: solid;
+	border-color: #CAC6C5;
+}
+
+p.descripcion{
+	margin-top: 5%;
+	padding-left: 2%;
+	padding-right: 5%;
+}
+
+header.header-espacio 
+{
+	margin-top: 8%;
+}
+
+table td
+{
+	border: 1px solid black;
+}
+
+.centrarTexto
+{
+	text-align: center;
+}

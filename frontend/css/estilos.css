@@ -1,0 +1,462 @@
+#mainNav.navbar-shrink 
+{
+	padding-bottom: 10px;
+}
+#mainNav .navbar-toggler
+{
+	background-color: #8E0C32;
+}
+#botonPopPub{
+	background-color: #8E0C32;
+	color: #fff;
+}
+a.active{
+	color: #8E0C32 !important;
+}
+a.navbar-brand js-scroll-trigger
+{
+	color: #C4BEC0;
+}
+
+.fa-shopping-cart
+{
+	width: 15;
+	height: 15;
+}
+#mainNav a.navbar-brand,#mainNav a.navbar-brand:active, #mainNav a.navbar-brand:focus, #mainNav a.navbar-brand:hover {
+    color: #8E0C32;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover
+{
+	color: #8E0C32;
+}
+header.masthead
+{
+	color: #fff;
+
+
+}
+header.masthead
+{
+	background-image: url(../img/imagenes/fondo.jpg);
+}
+a.header 
+{
+	background-color: #8E0C32;
+	border-color: #8E0C32;
+	color: #fff  !important;
+}
+@media (min-width: 768px){
+	header.masthead .intro-text
+	 {
+	    padding-top: 250px;
+	    padding-bottom: 200px;
+	}
+}
+.page-section h2.section-heading
+{
+	color:#8E0C32;
+}
+.text-primary {
+    color: #8E0C32!important;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover 
+{
+	background-color: #8E0C32;
+}
+.btn-primary
+{
+	background-color: #8E0C32;
+	border-color: #8E0C32;
+	color: #fff  !important;
+}
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover
+{
+	background-color: #8E0C32 !important;
+	border-color: #8E0C32 !important;
+	color: #fff  !important;
+}
+
+footer div div div ul li a:hover{
+	background-color: #8E0C32 !important;
+}
+button.btn-primary:selection
+{
+	background-color: #8E0C32 !important;
+	border-color: #8E0C32 !important;
+	color: #fff  !important;
+}
+
+/*Tienda*/
+
+section#section-lateral
+{
+	padding-top: 2% !important;
+	background-color: #C4BEC0 !important;
+	height: auto !important;
+}
+p.p-precio
+{
+	padding-bottom: 2%;
+	font-weight: bolder;
+}
+
+.cartas-productos
+{
+	margin-top: 1%;
+	margin-bottom: 5%;
+
+}
+.btn-productos
+{
+	position: absolute;
+	bottom: 0;
+	
+}
+
+#seccion-productos
+{
+	margin-top: 2%;
+}
+
+.detalle-padding
+{
+	padding-top: 2%;
+}
+
+h5 a {
+	color: #8E0C32 !important;
+	text-decoration: none !important;
+}
+
+
+.section-lateral
+{
+	padding-top: 2% !important;
+}
+
+a.lateral{
+	color: #000;
+}
+h5.lateral{
+	color: #8E0C32;
+}
+
+/*Login*/
+
+.btnEnviar{
+	color:#17C0D4 !important;
+}
+
+main.main-espacio
+{
+	margin-top: 10% !important;
+	margin-bottom: 2%;
+}
+
+
+div.fila-espacio
+{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+article.article-espacio
+{
+	margin-bottom: 3%;
+}
+
+/*Formularios*/
+
+div.container-login100
+{
+	background-color: #fff ;
+}
+.wrap-login100
+{
+	
+    background-color: #C4BEC0;
+}
+span.login100-form-title
+{
+	color: #8E0C32;
+}
+input.input100
+{
+	color: #000;
+}
+input.btn
+{
+	background-color: #8E0C32;
+	color: #000;
+	border-color: #8E0C32;
+}
+
+input.btn-negro
+{
+	background-color:#000;
+	border-color: #000;
+	color: #fff;
+}
+
+input.btn-secondary:active, .btn-primary:focus, .btn-primary:hover
+{
+	background-color:#000;
+	border-color: #000;
+}
+span.txt1
+{
+	color: #000;
+}
+a.txt2
+{
+	color:#8E0C32;
+}
+div h1
+{
+	text-align: center;
+	padding-bottom: 3%;
+}
+
+form
+{
+	margin-top: 2%;	
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	
+}
+
+.form-gris
+{
+	background-color: #C4BEC0;
+}
+
+img.fotoProducto{
+	width: 500px;
+	height: 600px;
+	border-style: solid;
+	border-color: #CAC6C5;
+	
+}
+
+p.precio{
+	font-size: 25px;
+}
+
+div.cuadro-descripcion
+{
+	margin-top: 5%;
+	margin-right: 2%;
+	border-style: solid;
+	border-color: #CAC6C5;
+}
+
+p.descripcion{
+	margin-top: 5%;
+	padding-left: 2%;
+	padding-right: 5%;
+}
+
+#p-registro
+{
+	text-align: center !important;
+	color: #000 !important;
+	margin-top: 2% !important;
+	font-size: 20px !important;
+}
+p#p-comprobarCU
+{
+	text-align: center !important;
+	color: #EC2F1D !important;
+	margin-top: 2% !important;
+	font-size: 20px !important;
+}
+#p-login
+{
+	text-align: center !important;
+	color: #FF0000 !important;
+	margin-top: 2% !important;
+	font-size: 20px !important;
+}
+
+header.header-espacio 
+{
+	margin-top: 8%;
+}
+
+table td
+{
+	border: 1px solid black;
+}
+
+.centrarTexto
+{
+	text-align: center;
+}
+
+
+#contactForm{
+	background-color: transparent;
+}
+
+#FormDatosPersona
+{
+	background-color: transparent;
+	margin-top: 15%;
+}
+
+#barra-lateral
+{
+	width: 100%;
+}
+
+/*Menu Cuenta*/
+
+div.cartas-menucuenta
+{
+	margin-top: 2%;
+}
+
+#main-opciones
+{
+	margin-top: 2%;
+	
+}
+a.a-carta
+{
+	color: #000 !important;
+	text-decoration: none;
+}
+
+/*Direcciones*/
+#a-direcciones
+{
+	color: blue !important;
+	text-decoration: underline;
+}
+
+/*Validar Contraseña*/
+
+#pswd_info {
+    position: absolute;
+   /* bottom: -75px;
+    bottom: -115px\9;*/
+    /* IE Specific */
+    right: 25%;
+    width: 250px;
+    padding: 15px;
+    background: #fefefe;
+    font-size: .875em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #ccc;
+    border: 1px solid #ddd;
+  }
+  #pswd_info h4 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  #pswd_info::before {
+    content: "\25B2";
+    position: absolute;
+    top: -12px;
+    left: 45%;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ddd;
+    text-shadow: none;
+    display: block;
+  }
+  .invalid {
+   /* background: url(../images/invalid.png) no-repeat 0 50%;*/
+    padding-left: 22px;
+    line-height: 24px;
+    color: #ec3f41;
+  }
+  .valid {
+    /*background: url(../images/valid.png) no-repeat 0 50%;*/
+    padding-left: 22px;
+    line-height: 24px;
+    color: #3a7d34;
+  }
+  #pswd_info {
+    display: none;
+  }
+
+  /*Pedidos*/
+  .tablaPedido
+  {
+	  margin-bottom: 2% !important;
+  }
+
+  /*Detalle del Pedido*/
+
+  img.img-detalle
+  {
+	  width: 20% !important;
+	  height: 20% !important;
+  }
+
+  .columna-fecha
+  {
+	  width: 10% !important;
+  }
+
+  .mas-espacio
+  {
+	width: 15% !important;
+  }
+
+  .tablaDetalle
+  {
+	  text-align: center;
+  }
+
+  #precio-Total
+  {
+	  text-align: right;
+	  font-weight: bold;
+	  padding-right: 2%;
+  }
+
+  /*Producto*/
+  #h5-cantidad
+  {
+	margin-bottom: 2% !important;
+	margin-top: 2% !important;
+  }
+  input#cantidad.form-control
+  {
+	  width: 10% !important;
+	  margin-bottom: 2% !important;
+	  margin-top: 2% !important;
+  }
+
+  /*Cesta*/
+
+  #tabla-cesta th
+  {
+	  text-align: center !important;
+  }
+
+  #tabla-cesta td.td-precio
+  {
+	text-align: right !important;
+	
+  }
+
+  #tabla-cesta td.td-precio p
+  {
+	margin-right: 9% !important;
+	
+  }
+
+  /*Productos*/
+  div#producto-imagen
+  {
+	  /*max-width: 0;*/
+  }
+
+  
