@@ -225,7 +225,8 @@
           </div>
           <div class="form-group">
             <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Actualizar">
-            <a href="actualizarcontrasena.php" class="btn btn-secondary">Cambiar Contrasena</a>
+            <a href="actualizarcontrasena.php" class="btn btn-warning">Cambiar Contrasena</a>
+            <a href="menucuenta.php" class="btn btn-gris">Volver al Menu</a>
           </div>
       </form>
   </main>

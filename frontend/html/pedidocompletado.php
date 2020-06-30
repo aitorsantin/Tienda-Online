@@ -16,15 +16,18 @@
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
   <link href="../css/agency.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/estilos.css">
-
+  <?php
+        include "../../db/conexion.php";   
+    ?>
 </head>
 
 <body class="body" id="page-top">
 
   <header>
-    <?php
+  <?php
      session_start();
 
     if (isset($_SESSION["login"])) 
@@ -37,59 +40,22 @@
     }
   ?>
   </header>
-  <main class="container" id="main-opciones">
-    <div class="row row-cols-1 row-cols-md-4">
-      <a href="account.php" class="col mb-4 a-carta">
-        <div class="col mb-4">
-            <div class="card h-100">
-            <img src="../../images/user.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Datos Personales</h5>
-            </div>
-            </div>
-        </div>
-      </a>
-      <a href="pedidos.php" class="col mb-4 a-carta">
-        <div class="col mb-4">
-            <div class="card h-100">
-            <img src="../../images/pedidos.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mis Pedidos</h5>
-            </div>
-            </div>
-        </div>
-      </a>
-      <a href="direcciones.php" class="col mb-4 a-carta">
-        <div class="col mb-4">
-            <div class="card h-100">
-            <img src="../../images/casa.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Direcciones</h5>
-            </div>
-            </div>
-        </div>
-      </a>
-      <a href="#" class=".col md-4 a-carta">
-        <div class="col mb-4">
-            <div class="card h-100">
-            <img src="../../images/pago.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Metodos de Pago</h5>
-            </div>
-            </div>
-        </div>
-      </a>
-    </div>
-    <div id="menu-botonvolver">
-      <a href="../index.php" class="btn btn-gris col-12 col-md-2">Volver al inicio</a>
-    </div>
+  <main class="container">
+    <h1 id="titulo-tramitado">Pedido Tramitado Con Existo</h1>
+    <p id="p-tramitado">Puede consultar el estado de su pedido en el menú de su cuenta en el apartado de pedidos.</p>
+    <h2>¿Qué desea hacer?</h2>
+    <ul id="ul-tramitado">
+        <li><a href="tienda.php" class="a-tramitado">Volver a realizar un Pedido</a></li>
+        <li><a href="pedidos.php" class="a-tramitado">Ver mis pedidos realizados</a></li>
+        <li><a href="../index.php" class="a-tramitado">Volver a la pagina de inicio</a></li>
+    </ul>
   </main>
+  <!-- Footer -->
   <?php
-      include 'footer.php';
-    ?>
+    include "footer.php";
+  ?>
 
-  
-
+ 
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -107,13 +73,16 @@
   <script>
     $(document).ready(function()
     {
+      var fila="";
       $("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                          "margin-top":"21%"});
+                            "margin-top":"26%"});
+
+
+      
     });
   </script>
-
 </body>
 
 </html>

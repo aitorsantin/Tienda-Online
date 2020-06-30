@@ -87,8 +87,7 @@
       </tr>
     
     <?php
-       if (isset($_SESSION["login"])) 
-       {
+       
          
 
       while(mysqli_stmt_fetch($pra))
@@ -107,20 +106,6 @@
       </tr>
       <?php
       }
-    }
-    else{
-      ?>
-       <tr>
-        <td><button name="btnDescartar" class="btn btn-danger">Descartar</button><input type="hidden" id="nfila" name="nfila" value="0"></td>
-        <td>Codigo del Articulo</td>
-        <td>Nombre del Articulo</td>
-        <td>0</td>
-        <td class="td-precio"><p>0€</p></td>
-      </tr>
-      <?php
-      
-    }
-    
       ?>
       <?php
 
@@ -202,13 +187,14 @@ if($pre)
         <div class="card col-xs-12 col-lg-4">
           <div class="card-body">
             <h5 class="card-title">Direccion de Envio</h5>
+            <div id="direccion-contenedor">
+
             <?php
             if (!isset($_SESSION["login"])) 
             {
               
              ?>
             <p class="card-text">No existe ninguna direccion de envio seleccionada</p>
-            <a href="direccion.php" class="btn btn-dark">Añadir una direccion de envio</a>
             <?php
               }
              ?>
@@ -216,12 +202,13 @@ if($pre)
                while(mysqli_stmt_fetch($pre))
                {
                  ?>
-                 <p class="card-text"><?php echo $dCompleta; ?></p>
+                 <p class="card-text p-direccion"><?php echo $dCompleta; ?></p>
                  <a href="direcciones.php" class="btn btn-dark">Cambiar Direccion de envio</a>
                  <?php
  
                }
            ?>
+           </div>
           </div>
         </div>
       </div>
@@ -242,14 +229,9 @@ if($pre)
         <div class="col-xs-8 col-lg-10">
           
         </div>
-        <button class="btn btn-primary col-xs-4 col-lg-2">
-          Tramitar Pedido
-        </button>
+        <a id="tramitar-pedido" href="tramitarpedido.php?id=<?php echo $idCesta; ?>" class="btn btn-primary col-xs-4 col-lg-2">Tramitar Pedido</a>
       </div>
-    </article>
-      
-
-      
+    </article>  
   </main>
   <!-- Footer -->
   <?php
@@ -278,10 +260,10 @@ if($pre)
       //$("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"12%"});
+                            "margin-top":"13%"});
 
       <?php
-        if (isset($_SESSION["login"])) 
+        if (!isset($_SESSION["login"])) 
         {
       ?>
 
@@ -289,21 +271,73 @@ if($pre)
       if(resultado==false)
       {
         $("#tabla-cesta").append("<tr>"+
-        "<td><button name=\"btnDescartar\" class=\"btn btn-danger\">Descartar</button><input type=\"hidden\" id=\"nfila\" name=\"nfila\" value=\"0\"></td>"+
+        "<td></td>"+
         "<td>Codigo del Articulo</td>"+
         "<td>Nombre del Articulo</td>"+
         "<td>0</td>"+
         "<td><p>0€</p></td>"+
         "</tr>");
-        
-        
-      
-      }
 
+        $("#tramitar-pedido").click(function(){
+          alert("No puede tramitar ningun pedido ya que no ha iniciado sesion");
+          $("#tramitar-pedido").attr('href', 'cesta.php');
+        });
+
+      }
       <?php
         
         }
       ?>
+
+      <?php 
+         if (isset($_SESSION["login"])) 
+         {
+      ?>
+        var resultado=$("tr").hasClass("tr-sql");
+        if(resultado==false)
+        {
+          $("#tabla-cesta").append("<tr>"+
+          "<td></td>"+
+          "<td>Codigo del Articulo</td>"+
+          "<td>Nombre del Articulo</td>"+
+          "<td>0</td>"+
+          "<td><p>0€</p></td>"+
+          "</tr>");
+
+          $("#tramitar-pedido").click(function(){
+            alert("No puede tramitar ningun pedido ya que la cesta esta vacia");
+            $("#tramitar-pedido").attr('href', 'cesta.php');
+          });
+
+        }
+    <?php  
+          }
+        ?>
+
+       
+       var direccion=$("p").hasClass("p-direccion");
+       if(direccion==false)
+       {
+         $("#direccion-contenedor").html("<p class=\"card-text\">No existe ninguna direccion de envio seleccionada</p>");
+
+         <?php 
+          if (isset($_SESSION["login"])) 
+          {
+         ?>
+            $("#direccion-contenedor").append("<a href=\"direccion.php\" class=\"btn btn-dark\">Añadir Direccion de envio</a>");
+            
+            $("#tramitar-pedido").click(function(){
+              alert("No puede tramitar ningun pedido ya que no existe ninguna direccion de envio");
+              $("#tramitar-pedido").attr('href', 'cesta.php');
+
+              
+            });
+        <?php  
+            }
+          ?>
+       }
+
+      
 
       
     });

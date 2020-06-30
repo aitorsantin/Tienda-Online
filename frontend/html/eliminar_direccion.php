@@ -121,6 +121,7 @@
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Eliminar">
+        <a href="direcciones.php" class="btn btn-gris">Volver a Seleccionar una Direccion</a>
     </div>
 </form>
 </main>
@@ -149,6 +150,18 @@
       $("#pie-pagina").css({"margin-top":"34%",
                             "background-color":"#6c757d",
                             "color":"#fff"});
+      
+      
+
+      $("form").submit(function(e)
+      {
+        if($("#selDireccion").val()=="0")
+        {
+          e.preventDefault();
+          alert("Debe seleccionar una direccion para eliminar");
+        }
+            
+      });
   });
   </script>
 

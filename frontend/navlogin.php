@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-secondary fixed-top" id="mainNav">
     <div class="container">

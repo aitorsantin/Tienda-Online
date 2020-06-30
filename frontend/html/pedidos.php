@@ -56,18 +56,22 @@
         on r.idRegistro=cli.idRegistro
         WHERE r.Username=? ";
 
+        
+
         $pre=mysqli_prepare($con,$sql);
+
 
         mysqli_stmt_bind_param($pre, "s", $username);
 
         mysqli_stmt_execute($pre);
 
         mysqli_stmt_bind_result($pre, $idPedido, $Fecha, $Envio, $Estado, $Total);
+        
         while(mysqli_stmt_fetch($pre))
         { 
       ?>
-      <table style="width:100%" class="tablaCompras tablaPedido">
-      <tr>
+      <table style="width:100%" class="tablaCompras tablaPedido table">
+      <tr class="tr-cabeceras thead-dark">
         <th>Fecha de Pedido</th>
         <th>Codigo de Pedido</th>
         <th>Estado del Pedido</th>
@@ -123,6 +127,12 @@
         } 
     ?>
     </table> 
+    <div id="tabla-llena">
+    </div>
+
+    <div class="div-volver">
+      <a href="menucuenta.php" class="btn btn-gris">Volver al menu</a>
+    </div>
   </main>
   <!-- Footer -->
   <?php
@@ -152,14 +162,32 @@
       //$("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"34%"});
+                            "margin-top":"20%"});
 
-      $('#<?php echo $idPedido; ?>').click(function()
-      {
-        alert($('#<?php echo $idPedido; ?>').attr('id'));
-      });
-
-
+     if(!$("table").length)
+     {
+       $("#tabla-llena").html("<table style=\"width:100%\" class=\"tablaCompras tablaPedido table\" id=\"tabla-vacia\">"+
+                              "<tr class=\"tr-cabeceras thead-dark\">"+
+                              "<th>Fecha de Pedido</th>"+
+                                "<th>Codigo de Pedido</th>"+
+                                "<th>Estado del Pedido</th>"+
+                                "<th>Tipo de Envio</th>"+
+                                "<th>Precio Total</th>"+
+                              "</tr>"+
+                              "<tr>"+
+                              "<td> 00/00/0000 </td>"+
+                                "<td>Codigo de Pedido</td>"+
+                                "<td>Estado del Pedido</th>"+
+                                "<td>Tipo de Envio</td>"+
+                                "<td>0€</td>"+
+                              "</tr>"+
+                            "</table>");
+                            $("#pie-pagina").css({"background-color":"#6c757d",
+                            "color":"#fff",
+                            "margin-top":"25%"});
+    }
+    
+      
     });
   </script>
 </body>

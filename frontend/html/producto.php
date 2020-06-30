@@ -168,7 +168,7 @@
     $("#mainNav").removeClass("fixed-top");
     $("#pie-pagina").css({"background-color":"#6c757d",
                                 "color":"#fff",
-                                "margin-top":"8%"});
+                                "margin-top":"19%"});
 
     $("#enviar").click(function()
     {

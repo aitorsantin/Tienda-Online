@@ -76,10 +76,6 @@
         }  
         mysqli_close($con); 
       }
-      else
-      {
-        echo "No hemos validado";
-      }
     }
   ?>
   <?php
@@ -93,7 +89,7 @@
       {
         $valida = FALSE;
         $error = '<p><label class="text-danger">La direccion no puede estar vacia</label></p>';
-        echo "No valido la direccion";
+        //echo "No valido la direccion";
       }
       else
       {
@@ -105,7 +101,7 @@
       {
         $valida = FALSE;
           $error = '<p><label class="text-danger">El codigo postal no puede estar vacio</label></p>';
-          echo "No valido el codigo postal";
+          //echo "No valido el codigo postal";
       }
       else
       {
@@ -116,7 +112,7 @@
       {
         $valida = FALSE;
           $error = '<p><label class="text-danger">La poblacion no puede estar vacia</label></p>';
-          echo "No valido la poblacion";
+         // echo "No valido la poblacion";
       }
       else
       {
@@ -127,7 +123,7 @@
       {
         $valida = FALSE;
         $error = '<p><label class="text-danger">La provincia no puede estar vacia</label></p>';
-        echo "No valido la provincia";
+        //echo "No valido la provincia";
       }
       else
       {
@@ -138,7 +134,7 @@
       {
         $valida = FALSE;
           $error = '<p><label class="text-danger">Debe seleccionar un tipo de direccion</label></p>';
-          echo "No valido el combobox";
+          //echo "No valido el combobox";
       }
       else
       {
@@ -209,7 +205,7 @@
     <p id="p-registro"> <?= $message ?></p>
 <?php endif; ?>
    
-<form class="form" method="POST" action="#">
+<form class="form" id="formulario" method="POST" action="#">
     <div class="form-group">
         <select class="form-control" name="selDireccion" id="selDireccion">
                 <option value="0">Selleccione una direccion a editar</option>
@@ -246,6 +242,7 @@
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Actualizar">
+        <a href="direcciones.php" class="btn btn-gris">Volver a Seleccionar Una Direccion</a>
     </div>
 </form>
 </main>
@@ -299,8 +296,12 @@
         $("#selOpciones option").removeAttr("selected");
         $("#selOpciones option[value=0]").attr({selected: true});
 
-
+        e.preventDefault();
+          alert("Debe seleccionar una direccion para modificar sus datos");
       }
+
+     
+
       if(valor!=0)
       {
         $("#txtDireccion").attr("readonly", false); 

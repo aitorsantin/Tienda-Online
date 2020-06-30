@@ -167,13 +167,9 @@
         <td id="precio-Total" colspan="6">Precio Total: <?php echo $pTotal; ?>€</td>
       </tr>
     </table>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <a class="btn btn-primary" href="pedidos.php">Volver a la lista de Pedidos</a>
+        <div class="div-volver">
+          <a class="btn btn-gris" href="pedidos.php">Volver a la lista de Pedidos</a>
         </div>
-      </div>
-    </div> 
   </main>
   <!-- Footer -->
   <?php

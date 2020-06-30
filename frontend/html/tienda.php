@@ -42,7 +42,7 @@
   ?>
   <!-- Header -->
   <header class="container-fluid" id="header">
-  <div class="row">
+  <div class="row columna-tienda">
     <!--col-xs-4 col-sm-2-->
     <section id="section-lateral" class="lateral col-4 col-md-2">
       <div>
@@ -229,15 +229,17 @@
       mysqli_close($con);
     }
     ?>
+        <div style="clear: both; padding-bottom: 10px"></div>
         </div>
   <!--</div>-->
     </section>
   </div>
   </header>
   <!-- Footer -->
-  <?php 
-    include 'footer.php';
-  ?>
+
+    <?php 
+      include 'footer.php';
+    ?>
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -262,7 +264,7 @@
       if($("#contador").val()<5)
       {
         $("#mainNav").removeClass("fixed-top");
-        $("#pie-pagina").css({"margin-top":"9%",
+        $("#pie-pagina").css({
                               "background-color":"#6c757d",
                               "color":"#fff"});
         $("#section-lateral").css({"height":"auto !important"})
@@ -272,6 +274,7 @@
         $("#mainNav").removeClass("fixed-top");
         $("#pie-pagina").css({"background-color":"#6c757d",
                               "color":"#fff"});
+       
       }
     });
 

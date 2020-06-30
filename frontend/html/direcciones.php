@@ -191,6 +191,9 @@
     <p>
       <a href="direccion.php" id="a-direcciones">Añadir una direccion</a> | <a href="editar_direccion.php" id="a-direcciones">Editar direccion</a> | <a href="eliminar_direccion.php" id="a-direcciones">Eliminar direccion</a>
     </p>
+    <div id="direcciones-volver">
+          <a href="menucuenta.php" class="btn btn-gris">Volver al Menu</a>
+    </div>
     
     
   </main>
@@ -221,7 +224,7 @@
       var validado=true;
 
       $("#mainNav").removeClass("fixed-top");
-      $("#pie-pagina").css({"margin-top":"32%",
+      $("#pie-pagina").css({"margin-top":"29%",
                             "background-color":"#6c757d",
                             "color":"#fff"});
 

@@ -173,7 +173,14 @@
             </select>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Guardar">
+            <div class="row">
+              <div class="col-xs-12 col-2">
+              <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Guardar">
+              </div >
+              <div class="col-xs-12 col-md-10">
+                <a href="direcciones.php" class="btn btn-gris">Volver a Seleccionar Direccion Predeterminada</a>
+              </div>
+            </div>
         </div>
     </form>
   </main>
