@@ -39,6 +39,45 @@
       include 'navbar2.php';
     }
   ?>
+  <?php 
+     $con=mysqli_connect($host, $usuario, $password, $db);
+
+     if(mysqli_connect_errno()){
+      echo "Error al conectar con la base de datos";
+      exit(); 
+    }
+    $sql="SELECT MAX(idPedido) AS idPedido
+    FROM cabecerapedido";
+
+  if($resultado= mysqli_query($con, $sql))
+  {
+    while($fila=mysqli_fetch_assoc($resultado))
+    {
+      $idPedido=$fila['idPedido'];
+
+      
+    }
+  }
+  
+
+  $select=("CALL pr_movimientosAlmacen(?);");
+        $procedure=mysqli_prepare($con, $select);
+        mysqli_stmt_bind_param($procedure, 'i', $idPedido);
+				
+
+				if (mysqli_stmt_execute($procedure))
+				{
+					$message = 'Direccion dada de alta';
+				}
+				else
+				{
+					$message = 'No se pudo dar de alta la direccion';
+        }
+        
+       
+				mysqli_stmt_close($procedure);
+				mysqli_close($con);
+  ?>
   </header>
   <main class="container">
     <h1 id="titulo-tramitado">Pedido Tramitado Con Existo</h1>

@@ -33,6 +33,7 @@
     if (isset($_SESSION["login"])) 
     {
       include 'navlogin2.php';
+
     }
     else
     {
@@ -48,8 +49,11 @@
      echo "Error al conectar con la base de datos";
      exit(); 
    }
-
-   $username = $_SESSION["login"];
+   if (isset($_SESSION["login"])) 
+    {
+      $username = $_SESSION["login"];
+      
+    }
 
     $select="SELECT d.idCesta, nfila, d.codArticulo, a.Nombre, cantidad, precio, total_linea
     FROM detallecesta d
@@ -75,7 +79,7 @@
       
   ?>
   <!-- Header -->
-  <main class="main-espacio container-fluid" id="header">
+  <main class="main-pequeespacio container-fluid" id="header">
       <h1>Carro de la Compra</h1>
       <table id="tabla-cesta" style="width:100%" class="tablaCompras table">
       <tr class="tr-cabeceras thead-dark">
@@ -257,10 +261,10 @@ if($pre)
     $(document).ready(function()
     {
       var fila="";
-      //$("#mainNav").removeClass("fixed-top");
+      $("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"13%"});
+                            "margin-top":"8%"});
 
       <?php
         if (!isset($_SESSION["login"])) 

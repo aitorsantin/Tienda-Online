@@ -41,7 +41,7 @@
   ?>
   </header>
   <!-- Header -->
-  <main class="main-espacio container-fluid" id="header">
+  <main class="main-pequeespacio container-fluid" id="header">
       <h1>Mis Pedidos</h1>
       <?php
         $con=mysqli_connect($host, $usuario, $password, $db);
@@ -159,10 +159,10 @@
     {
       var id="";
 
-      //$("#mainNav").removeClass("fixed-top");
+      $("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"20%"});
+                            "margin-top":"26%"});
 
      if(!$("table").length)
      {
@@ -184,7 +184,7 @@
                             "</table>");
                             $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"25%"});
+                            "margin-top":"27%"});
     }
     
       

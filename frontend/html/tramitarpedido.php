@@ -217,7 +217,7 @@
       $("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"18%"});
+                            "margin-top":"16%"});
 
       $("#selEnvio").change(function(){
         if($("#selEnvio").val()==0)
@@ -249,7 +249,7 @@
       $("#btnConfirmar").click(function(){
             if($("#selEnvio").val()==0)
             {
-              alert("Debe seleccionar una de las direcciones");
+              alert("Debe seleccionar un metodo de envio");
               event.preventDefault();
               
             }

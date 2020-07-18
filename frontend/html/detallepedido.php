@@ -24,7 +24,7 @@
     ?>
 </head>
 
-<body class="body" id="page-top">
+<body class="body" id="target">
 
   <header>
   <?php
@@ -41,7 +41,7 @@
   ?>
   </header>
   <!-- Header -->
-  <main class="main-espacio container-fluid" id="header">
+  <main class="main-pequeespacio container-fluid" id="header">
       <?php
         $idPedido=$_GET["idPedido"];
        ?>
@@ -68,7 +68,8 @@
         mysqli_stmt_bind_result($pra, $idPedido, $Fecha, $Envio, $Estado, $Total);
          
       ?>
-      <table style="width:100%" class="tablaCompras tablaPedido tablaDetalle table">
+      <div id="contenedor">
+      <table style="width:100%" id="content" class="tablaCompras tablaPedido tablaDetalle table">
       <tr class="thead-dark">
         <th class="columna-fecha">Fecha de Pedido</th>
         <th>Codigo de Pedido</th>
@@ -167,7 +168,11 @@
         <td id="precio-Total" colspan="6">Precio Total: <?php echo $pTotal; ?>€</td>
       </tr>
     </table>
+    </div>
         <div class="div-volver">
+          <button id="cmd" class="btn btn-success">
+            Descargar factura
+          </button>
           <a class="btn btn-gris" href="pedidos.php">Volver a la lista de Pedidos</a>
         </div>
   </main>
@@ -190,23 +195,55 @@
 
   <!-- Custom scripts for this template -->
   <script src="../js/agency.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 
   <script>
     $(document).ready(function()
     {
       var id="";
 
-      //$("#mainNav").removeClass("fixed-top");
+      var specialElementHandler={
+        "#editor":function(element, renderer)
+        {
+          return true;
+        }
+      }
+
+      $("#cmd").click(function(){
+          
+
+         /* var doc=new jsPDF();
+
+          doc.fromHTML($("#tabla").html(), 15, 15, {
+            "width":170,
+            "elementHandlers":specialElementHandler
+          });
+
+          doc.save("factura.pdf")*/
+
+          var doc = new jsPDF();
+
+          doc.text($("#contenedor").html(), 10, 10,
+          {
+            "width":170,
+            "elementHandlers":specialElementHandler
+          }
+          );
+          doc.save('factura.pdf');
+      });
+
+      $("#mainNav").removeClass("fixed-top");
       $("#pie-pagina").css({"background-color":"#6c757d",
                             "color":"#fff",
-                            "margin-top":"10%"});
+                            "margin-top":"14%"});
 
       $('#<?php echo $idPedido; ?>').click(function()
       {
         alert($('#<?php echo $idPedido; ?>').attr('id'));
       });
 
-
+      
     });
   </script>
 </body>

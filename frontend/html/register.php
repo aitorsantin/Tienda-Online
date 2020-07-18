@@ -199,7 +199,7 @@
 						<span id="spConfirm"></span>
 					</div>
 					<div class="form-group col-12">
-						<input type="submit" name="btnSubmit" id="btnSubmit" class="btn  btn-lg btn-block">
+						<input type="submit" name="btnSubmit" id="btnSubmit" class="btn  btn-lg btn-block" value="Crear Cuenta">
 						<input type="reset" class="btn btn-negro btn-lg btn-block">
 					</div>
 					<div class="text-center p-t-45 p-b-4">

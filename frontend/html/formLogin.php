@@ -155,7 +155,7 @@
 
 					<div class="container-login100-form-btn m-t-20">
 			            <input id="btnSubmit" name="btnSubmit" type="submit" class="btn btn-lg btn-block" value="Iniciar Sesion">
-			            <input type="reset" id="btnReset" name="btnReset" class="btn-negro btn-lg btn-block" value="Cerrar">
+			            <input type="reset" id="btnReset" name="btnReset" class="btn-negro btn-lg btn-block" value="Restablecer">
 					</div>
 					<div class="text-center p-t-45 p-b-4">
 						<span class="txt1">

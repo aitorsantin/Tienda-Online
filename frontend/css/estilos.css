@@ -428,6 +428,11 @@ div#menu-botonvolver
 	  margin-bottom: 2% !important;
   }
 
+  main.main-pequeespacio
+  {
+	  margin-top: 2% !important;
+  }
+
   /*Detalle del Pedido*/
 
   img.img-detalle
@@ -469,6 +474,11 @@ div#menu-botonvolver
 	  width: 10% !important;
 	  margin-bottom: 2% !important;
 	  margin-top: 2% !important;
+  }
+
+  h5#h5-rojo
+  {
+	  color: red;
   }
 
   /*Cesta*/

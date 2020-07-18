@@ -115,7 +115,7 @@
     <?php endif; ?>
       <form class="form" method="POST" action="actualizarcontrasena.php">
         <div class="form-group">
-        <label for="txtPassword">Contraseña:</label>
+        <label for="txtPassword">Nueva Contraseña:</label>
             <input type="password" class="form-control" id="txtPassword" name="txtPassword">
         </div>
         <div id="pswd_info">
@@ -137,6 +137,7 @@
         </div>
           <div class="form-group">
             <input type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="Cambiar Contraseña">
+            <a href="account.php" class="btn btn-gris">Volver a los datos de la cuenta</a>
           </div>
       </form>
   </main>

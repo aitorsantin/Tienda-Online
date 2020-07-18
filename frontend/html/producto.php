@@ -56,7 +56,7 @@
 			exit(); 
     }
     
-    $sql="SELECT a.codArticulo, a.Nombre, a.precioCoste, i.Imagen, a.Descripcion
+    $sql="SELECT a.codArticulo, a.Nombre, a.precioCoste, i.Imagen, a.Descripcion, a.Stock
     FROM articulos as a 
     JOIN categoria as c 
     on c.idCategoria=a.categoria
@@ -77,7 +77,7 @@
       mysqli_stmt_execute($pre);
       //Paso 6: Guardamos los campos obtenidos a la tabla
       //Las variables deben coincidir con los nombres de la tabla
-      mysqli_stmt_bind_result($pre, $codArticulo, $Nombre, $precioCoste, $Imagen, $Descripcion);
+      mysqli_stmt_bind_result($pre, $codArticulo, $Nombre, $precioCoste, $Imagen, $Descripcion, $Stock);
 
     }
   ?>
@@ -119,8 +119,30 @@
             <p class="descripcion">Descripcion: <?php echo  $Descripcion;?> </p>
           </div>
           <h5 id="h5-cantidad">Cantidad</h5>
-          <input type='number' class="form-control" id="cantidad" placeholder="1">
+          <input type='number' class="form-control" name="cantidad" id="cantidad" placeholder="1" min="1" nax="<?php echo $Stock; ?>">
+          
+          <p id="maximo"><?php echo $Stock; ?></p>
+          <?php
+            if($Stock<=10 && $Stock >0)
+            {
+              echo " <h5 id=\"h5-rojo\">Quedan $Stock articulos</h5>";
+            }
+
+            if($Stock==0)
+            {
+              echo " <h5 id=\"h5-rojo\">Producto Agotado</h5>";
+          ?>
+            <button id="enviar" type="button" class="btn btn-secondary" disabled>Añadir a la cesta</button>
+          <?php
+            }
+            else
+            {
+          ?>
           <button id="enviar" type="button" class="btn btn-secondary">Añadir a la cesta</button>
+          <?php
+            }
+          ?>
+          
 
           
         </div>
@@ -161,8 +183,10 @@
   {
     var codArticulo=<?php echo $codArticulo; ?>;
     var user=$("input:hidden").val();
+    var max=parseInt($("#maximo").text());
+    $("#maximo").css("display", "none");
     
-    var cantidad=$("#cantidad").val();
+    var cantidad=parseInt($("#cantidad").val());
           
 
     $("#mainNav").removeClass("fixed-top");
@@ -172,7 +196,8 @@
 
     $("#enviar").click(function()
     {
-      if($("input:hidden").val()=="vacio")
+      
+      if($("#username").val()=="vacio")
       {
         alert("No puede añadir productos a la cesta por que no ha iniciado sesion");
       }
@@ -187,32 +212,41 @@
           cantidad=$("#cantidad").val();
         }
 
-        $.ajax({
-          url: "añadircesta.php",
-          type: "POST",
-          ASYNC: true,
-          data: {codArticulo: codArticulo, cantidad: cantidad, username: user},
-          success:function(respuesta)
-				  {
-            if(respuesta=="exito")
+        if(max<cantidad)
+        {
+
+          alert("No se puede añadir tal cantidad a la cesta, el numero máximo de unidades de este artículo es "+max);
+        }
+        else if(cantidad<=0)
+        {
+          alert("La unidad minima a añadir es 1");
+        }
+        else if(cantidad<=max)
+        {
+          $.ajax({
+            url: "añadircesta.php",
+            type: "POST",
+            ASYNC: true,
+            data: {codArticulo: codArticulo, cantidad: cantidad, username: user},
+            success:function(respuesta)
             {
-              alert("Producto añadido a la cesta");
-            }
-            else
+              if(respuesta=="exito")
+              {
+                alert("Producto añadido a la cesta");
+              }
+              else
+              {
+                alert("Ocurrio un problema");
+              }
+              
+            },
+            error: function(error)
             {
-              alert("Ocurrio un problema");
+              console.log(error);
             }
-            
-          },
-          error: function(error)
-          {
-					  console.log(error);
-				  }
 
-       });
-
-
-
+          });
+        }
       }
 
     });
